@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Boston Housing Price Prediction</title>
+    <style>
+        body{
+            background-color:#10f742;
+            text-align:center;
+            padding:30px;
+        }
+        h1{
+            color:cyan;
+        }
+        form{
+            background-color: white;
+            padding: 30px;
+            margin:auto;
+            width:400px;
+            border-radius: 10px;
+        }
+        input[type="text"]{
+            width:90%;
+            padding:10px;
+            margin:10px 0;
+            border-radius: 5px;
+        }
+        input[type='submit']{
+            background-color: #4CAF50;
+            color:aqua;
+            cursor:pointer;
+        }
+        input[type='submit']:hover{
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Boston Housing Price Prediction</h2>
+    <form action="/predict" method="post">
+
+        <label>CRIM:</label><br>
+        <input type="text" name="CRIM"><br>
+
+        <label>ZN:</label><br>
+        <input type="text" name="ZN"><br>
+
+        <label>INDUS:</label><br>
+        <input type="text" name="INDUS"><br>
+
+        <label>CHAS:</label><br>
+        <input type="text" name="CHAS"><br>
+
+        <label>NOX:</label><br>
+        <input type="text" name="NOX"><br>
+
+        <label>RM:</label><br>
+        <input type="text" name="RM"><br>
+
+        <label>AGE:</label><br>
+        <input type="text" name="AGE"><br>
+
+        <label>DIS:</label><br>
+        <input type="text" name="DIS"><br>
+
+        <label>RAD:</label><br>
+        <input type="text" name="RAD"><br>
+
+        <label>TAX:</label><br>
+        <input type="text" name="TAX"><br>
+
+        <label>PTRATIO:</label><br>
+        <input type="text" name="PTRATIO"><br>
+
+        <label>B:</label><br>
+        <input type="text" name="B"><br>
+
+        <label>LSTAT:</label><br>
+        <input type="text" name="LSTAT"><br>
+
+        <br>
+        <input type="submit" value="Predict">
+
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+
+</body>
+</html>
